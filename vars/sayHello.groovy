@@ -4,3 +4,9 @@ def call(String name = 'World') {
     // Scripted Pipeline
     echo "Hello ${name}!"
 }
+
+def toUser() {
+    // Any valid steps can be called from this code, just like in other
+    // Scripted Pipeline
+    echo "Hello ${currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause').userName}!"
+}
